@@ -1,0 +1,9 @@
+services:
+  # Serviço da sua aplicação
+  app:
+    build: . # Constrói a imagem a partir do Dockerfile na raiz do projeto
+    container_name: imersao-alura-dev-ops # Nomeia o contêiner
+    ports:
+      - "8000:8000" # Mapeia a porta 8000 do host para a porta 8000 do container
+    volumes:
+      - .:/app # Monta o diretório atual (onde está seu código) em /app
