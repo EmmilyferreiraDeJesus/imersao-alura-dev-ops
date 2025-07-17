@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: gcp-prod
     env:
-      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/api:v${{ github.run_number }}
+      IMAGE_NAME: us-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run-source-deploy/api:v${{ github.run_number }}
     steps:
       # Git checkout
       - name: Checkout
