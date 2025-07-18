@@ -1,0 +1,43 @@
+name: Deploy to Google Cloud Plataform
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: Deploy to Cloud Run
+    runs-on: ubuntu-latest
+    environment: gcp-prod
+    env:
+      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/api:v${{ github.run_number }}
+    steps:
+      # Git checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Login to GCP
+      - uses: google-github-actions/setup-gcloud@v0.2.0
+        with:
+          service_account_key: ${{ secrets.GCP_CREDENTIALS }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      # gcloud configure docker
+      - name: Configure Docker
+        run: gcloud auth configure-docker --quiet
+
+      # build image
+      - name: Build Docker image
+        run: docker build -t $IMAGE_NAME .
+
+      # push image to registry
+      - name: Push Docker image
+        run: docker push $IMAGE_NAME
+
+      # deploy image
+      - name: Deploy Docker image to Cloud Run
+        run: gcloud run deploy api --image $IMAGE_NAME --region southamerica-east1 --port=8000 --allow-unauthenticated
+
+      # tag and deploy confirmation
+      - name: Print version tag
+        run: echo "Deploy realizado com a imagem:$IMAGE_NAME"
