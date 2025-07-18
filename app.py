@@ -13,6 +13,8 @@ app = FastAPI(
         Esta API fornece endpoints para gerenciar alunos, cursos e turmas, em uma instituição de ensino.  
         
         Permite realizar diferentes operações em cada uma dessas entidades.
+
+        Ela é hospedada e disponibilizada pelo Google Cloud Platform!
     """, 
     version="1.0.0",
 )
