@@ -40,6 +40,7 @@ O objetivo principal é explorar o uso do Docker para construir e executar aplic
 ## 🚀 Como Executar e Fazer o Deploy do Projeto
 
 - [Execução local sem Docker](docs/README-NO-DOCKER.md)
+- [Execução local com Docker](docs/README-DOCKER.md)
 
 
 
