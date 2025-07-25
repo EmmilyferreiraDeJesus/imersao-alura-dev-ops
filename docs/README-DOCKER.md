@@ -1,0 +1,2 @@
+# Execução Local com Docker
+
