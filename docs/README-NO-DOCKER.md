@@ -7,8 +7,9 @@
    python3 -m venv ./venv
 
    # Windows
-   python -m venv ./venv
-   py -3 -m venv ./venv
+   python -m venv ./venv      # Usa o Python padrão configurado no sistema
+   py -3 -m venv ./venv       # Usa especificamente o Python 3, ideal se há várias versões instaladas
+
    ```
 
 2. **Ative o ambiente virtual:**
@@ -21,11 +22,34 @@
    venv\Scripts\activate
    ```
 
-Ao tentar ativar o ambiente virtual no **windows** pode ocorrer o seguinte erro:
+## ⚠️ Problema: "running scripts is disabled on this system"
 
- - "File ... cannot be loaded because running scripts is disabled on this system".
+Se ao tentar ativar o ambiente virtual no **Windows**, você receber a mensagem:
 
-Para resolver este problema...
+ - **ERRO:** "File ... cannot be loaded because running scripts is disabled on this system".
+
+Isso acontece porque o PowerShell está com a execução de scripts desabilitada por questão de segurança.
+
+### ✅ Solução
+
+- **Abra o PowerShell como Administrador**
+- Verifique a política de execução:
+
+   ```sh
+    Get-ExecutionPolicy
+   ```
+
+    Provavelmente, será **"Restricted"**, que é o padrão e impede a execução de scripts.
+
+- Execute o seguinte comando:
+
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned
+    ```
+    Pressione Y e depois Enter para confirmar.
+   Tente ativar o ambiente virtual novamente.
+
+##
 
 3. **Instale as dependências:**
 
