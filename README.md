@@ -41,6 +41,9 @@ O objetivo principal é explorar o uso do Docker para construir e executar aplic
 
 - [Execução local sem Docker](docs/README-NO-DOCKER.md)
 - [Execução local com Docker](docs/README-DOCKER.md)
+- [Execução local com Docker Compose](docs/README-DOCKER-COMPOSE.md)
+- [Deploy Manual no Google Cloud](docs/README-DEPLOY-MANUAL-GOOGLECLOUD.md)
+- [Deploy Automatizado no Google Cloud](docs/README-DEPLOY-AUTOMATIZADO-GOOGLECLOUD.md)
 
 
 
