@@ -2,7 +2,7 @@
 
 Vamos usar o **Docker** para que o aplicativo possa rodar em qualquer máquina. A grande vantagem do Docker é que ele permite **empacotar nossa aplicação em uma imagem**. Pense na imagem como uma uma **receita completa** que já inclui tudo o que a aplicação precisa para funcionar – mesmo que você não tenha essas dependências instaladas diretamente na sua máquina! A imagem cuida de configurar o ambiente dentro do contêiner, garantindo que o aplicativo rode sem problemas. Essa imagem pode ser enviada para um **repositório compartilhado** (como o Docker Hub). Assim, qualquer pessoa que precise usar a aplicação só precisará **baixar essa imagem** e ter o projeto clonado em sua máquina para rodar, simplificando muito a distribuição e o uso!
 
-1. **Inicie o Docker Engine**
+1. **Inicie o Docker Engine:**
 
    Para usar o Docker, o Docker Daemon precisa estar rodando na sua máquina. O Docker CLI (o comando docker que você usa no terminal) é apenas o cliente; ele não       consegue executar contêineres ou construir imagens sozinho. É o Docker Engine (o daemon) que faz todo o trabalho. Se ele não estiver iniciado, o cliente Docker      não conseguirá se conectar a ele.
 
@@ -15,7 +15,7 @@ Vamos usar o **Docker** para que o aplicativo possa rodar em qualquer máquina. 
     # por exemplo
     docker ps .
     ```
-2. **Construa a imagem do Contêiner**
+2. **Construa a imagem do Contêiner:**
 
    Use o Dockerfile que está neste repositório para construir a imagem.
 
@@ -33,5 +33,23 @@ Vamos usar o **Docker** para que o aplicativo possa rodar em qualquer máquina. 
 
     - **Observação**: Você pode criar um arquivo `.dockerignore` para otimizar a criação da sua imagem Docker. Se você não especificar este arquivo no seu               projeto, tudo que estiver no diretório será enviado para o daemon do Docker no momento da compilação. Arquivos como `node_modules`, ambientes virtuais             (`venv`) ou até mesmo caches podem ser ignorados durante a compilação, tornando a imagem mais leve e eficiente.
 
-3. 
+3. **Execute o Contêiner:**
+
+   Para que sua aplicação rode e você possa acessá-la, precisamos "conectar" a porta de dentro do contêiner à uma porta do seu computador. Pense no contêiner como    uma "caixa" isolada. Sua aplicação está na porta 8000 dentro dessa caixa.
+
+   O comando `-p 8000:8000` faz essa "ponte":
+
+   - O primeiro `8000` é a porta no seu computador.
+
+   - O segundo `8000` é a porta dentro do contêiner.
+
+   Assim, quando você acessar a url no seu navegador, o Docker redireciona para a aplicação dentro da "caixa".
+
+   ```sh
+    docker run -p 8000:8000 school_api
+   ```
+
+5. **Acesse a Aplicação com a Documentação Interativa:**
+
+   Abra o navegador e acesse: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
    
