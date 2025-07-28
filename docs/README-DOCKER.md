@@ -4,12 +4,12 @@ Vamos usar o **Docker** para que o aplicativo possa rodar em qualquer máquina. 
 
 1. **Inicie o Docker Engine:**
 
-   Para usar o Docker, o Docker Daemon precisa estar rodando na sua máquina. O Docker CLI (o comando docker que você usa no terminal) é apenas o cliente; ele não       consegue executar contêineres ou construir imagens sozinho. É o Docker Engine (o daemon) que faz todo o trabalho. Se ele não estiver iniciado, o cliente Docker      não conseguirá se conectar a ele.
+   Para usar o Docker, o Docker Daemon precisa estar rodando na sua máquina. O Docker CLI (o comando docker que você usa no terminal) é apenas o cliente, ele não     consegue executar contêineres ou construir imagens sozinho. É o Docker Engine (o daemon) que faz todo o trabalho. Se ele não estiver iniciado, o cliente           Docker não conseguirá se conectar a ele.
 
    - Windows/macOS: O Docker Desktop é a forma mais fácil de ter o daemon do Docker rodando.
    - Linux: O Docker Engine é instalado como um serviço do sistema e fica rodando em segundo plano.
 
-   Verifique se o Docker está em execução rodando qualquer comando no terminal.
+   Verifique se o Docker está em execução rodando qualquer comando no terminal:
 
     ```sh
     # por exemplo
