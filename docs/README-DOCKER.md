@@ -1,2 +1,37 @@
 # Execução Local com Docker
 
+Vamos usar o **Docker** para que o aplicativo possa rodar em qualquer máquina. A grande vantagem do Docker é que ele permite **empacotar nossa aplicação em uma imagem**. Pense na imagem como uma uma **receita completa** que já inclui tudo o que a aplicação precisa para funcionar – mesmo que você não tenha essas dependências instaladas diretamente na sua máquina! A imagem cuida de configurar o ambiente dentro do contêiner, garantindo que o aplicativo rode sem problemas. Essa imagem pode ser enviada para um **repositório compartilhado** (como o Docker Hub). Assim, qualquer pessoa que precise usar a aplicação só precisará **baixar essa imagem** e ter o projeto clonado em sua máquina para rodar, simplificando muito a distribuição e o uso!
+
+1. **Inicie o Docker Engine**
+
+   Para usar o Docker, o Docker Daemon precisa estar rodando na sua máquina. O Docker CLI (o comando docker que você usa no terminal) é apenas o cliente; ele não       consegue executar contêineres ou construir imagens sozinho. É o Docker Engine (o daemon) que faz todo o trabalho. Se ele não estiver iniciado, o cliente Docker      não conseguirá se conectar a ele.
+
+   - Windows/macOS: O Docker Desktop é a forma mais fácil de ter o daemon do Docker rodando.
+   - Linux: O Docker Engine é instalado como um serviço do sistema e fica rodando em segundo plano.
+
+   Verifique se o Docker está em execução rodando qualquer comando no terminal.
+
+    ```sh
+    # por exemplo
+    docker ps .
+    ```
+2. **Construa a imagem do Contêiner**
+
+   Use o Dockerfile que está neste repositório para construir a imagem.
+
+   O Dockerfile é essencial para trabalhar com Docker. Ele é responsável por definir como a imagem do contêiner deve ser construída.
+
+    ```sh
+    docker build -t school_api .
+    ```
+
+   Verifique se a imagem foi construída com sucesso.
+
+    ```sh
+    docker images
+    ```
+
+    - **Observação**: Você pode criar um arquivo `.dockerignore` para otimizar a criação da sua imagem Docker. Se você não especificar este arquivo no seu               projeto, tudo que estiver no diretório será enviado para o daemon do Docker no momento da compilação. Arquivos como `node_modules`, ambientes virtuais             (`venv`) ou até mesmo caches podem ser ignorados durante a compilação, tornando a imagem mais leve e eficiente.
+
+3. 
+   
