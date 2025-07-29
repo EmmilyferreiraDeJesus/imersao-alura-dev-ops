@@ -10,7 +10,7 @@ Muitas aplicações precisam de vários componentes para funcionar, como um banc
 
    Use o Docker Compose que está neste repositório para construir a imagem.
 
-   O Docker Compose utiliza um arquivo (geralmente chamado `docker-compose.yml`). Esse arquivo organiza todo o passo a passo para construir e rodar a aplicação.        Ele define quais imagens usar, quais portas mapear, como dar nomes aos seus contêineres e muito mais.
+   O Docker Compose utiliza um arquivo (geralmente chamado `docker-compose.yml`). Esse arquivo organiza todo o passo a passo para construir e rodar a aplicação,          definindo quais imagens usar, quais portas mapear, como nomear seus contêineres e muito mais.
 
     ```sh
     docker compose up
