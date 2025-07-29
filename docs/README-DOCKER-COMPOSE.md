@@ -2,13 +2,15 @@
 
 O **Docker Compose** é uma ferramenta que nos ajuda a **automatizar processos** que seriam manuais e repetitivos, como construir e executar contêineres a partir de imagens Docker. Sua maior vantagem é permitir que a gente **suba e administre múltiplos contêineres de uma vez só.**
 
+Muitas aplicações precisam de vários componentes para funcionar, como um banco de dados, um servidor de backend e um frontend. Cada um desses componentes pode rodar em seu próprio contêiner. Imagina ter que subir cada um deles, mapear portas, e configurá-los separadamente? O Docker Compose resolve isso, permitindo que você configure tudo em um único arquivo e inicie todos os serviços com um só comando.
+
 1. Inicie o Docker Engine:
 
 2. Execute o Docker Compose:
 
    Use o Docker Compose que está neste repositório para construir a imagem.
 
-   O Docker Compose utiliza um arquivo (geralmente chamado `docker-compose.yml`). Esse arquivo organiza todo o passo a passo para construir e rodar a aplicação.      Ele define quais imagens usar, quais portas mapear, como dar nomes aos seus contêineres e muito mais.
+   O Docker Compose utiliza um arquivo (geralmente chamado `docker-compose.yml`). Esse arquivo organiza todo o passo a passo para construir e rodar a aplicação.        Ele define quais imagens usar, quais portas mapear, como dar nomes aos seus contêineres e muito mais.
 
     ```sh
     docker compose up
