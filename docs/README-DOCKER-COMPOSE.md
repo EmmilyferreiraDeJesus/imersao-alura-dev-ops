@@ -4,9 +4,9 @@ O **Docker Compose** é uma ferramenta que nos ajuda a **automatizar processos**
 
 Muitas aplicações precisam de vários componentes para funcionar, como um banco de dados, um servidor de backend e um frontend. Cada um desses componentes pode rodar em seu próprio contêiner. Imagina ter que subir cada um deles, mapear portas, e configurá-los separadamente? O Docker Compose resolve isso, permitindo que você configure tudo em um único arquivo e inicie todos os serviços com um só comando.
 
-1. Inicie o Docker Engine:
+1. **Inicie o Docker Engine:**
 
-2. Execute o Docker Compose:
+2. **Execute o Docker Compose:**
 
    Use o Docker Compose que está neste repositório para construir a imagem.
 
@@ -18,6 +18,6 @@ Muitas aplicações precisam de vários componentes para funcionar, como um banc
 
     Para parar a aplicação, pressione Ctrl + C no terminal onde o container está rodando.
 
-3. Acesse a Aplicação com a Documentação Interativa:
+3. **Acesse a Aplicação com a Documentação Interativa:**
 
    Abra o navegador e acesse: http://127.0.0.1:8000/docs
