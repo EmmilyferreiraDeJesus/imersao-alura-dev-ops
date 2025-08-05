@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: gcp-prod
     env:
-      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/api:v${{ github.run_number }}
+      IMAGE_NAME: southamerica-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/alura-imersao-devops/api:v${{ github.run_number }}
     steps:
       # Git checkout
       - name: Checkout
@@ -22,9 +22,9 @@ jobs:
           service_account_key: ${{ secrets.GCP_CREDENTIALS }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-      # gcloud configure docker
-      - name: Configure Docker
-        run: gcloud auth configure-docker --quiet
+      # gcloud configure docker for the Artifact Registry
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker southamerica-east1-docker.pkg.dev --quiet
 
       # build image
       - name: Build Docker image
