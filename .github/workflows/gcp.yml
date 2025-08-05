@@ -1,4 +1,4 @@
-name: Deploy to Google Cloud Plataform
+name: Deploy to Google Cloud Platform
 
 on:
   push:
