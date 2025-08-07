@@ -31,22 +31,22 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
    Dentro do console do Google Cloud, abra o seletor de projetos e crie um.
 
    ![Página inicial do Google Cloud](/assets/home_google_cloud.png)
-   ![Página inicial do Google Cloud](/assets/projects.png)
+   ![Seletor de projetos](/assets/projects.png)
 
    Para usar os recursos e fazer deploys, precisamos sempre de um projeto associado a uma conta de faturamento.
 
-   ![Página inicial do Google Cloud](/assets/new_project.png)
+   ![Novo projeto](/assets/new_project.png)
 
 4. **Ative as APIS Cloud Run e Artifact Registry**
 
    No menu lateral, procure por **API e Serviços > Biblioteca**. É aqui que vamos encontrar todas as APIs da Google.
 
-   ![Página inicial do Google Cloud](/assets/library_google.png)
+   ![Biblioteca Google Cloud](/assets/library_google.png)
 
    Pesquise por **Cloud Run** e **Artifact Registry** e verifique se ambas estão ativadas.
 
-   ![Página inicial do Google Cloud](/assets/cloud_run_api.png)
-   ![Página inicial do Google Cloud](/assets/artifact_registry_api.png)
+   ![API Cloud Run](/assets/cloud_run_api.png)
+   ![API Artifact Registry](/assets/artifact_registry_api.png)
 
    É essencial que as duas APIs estejam ativadas para que nosso deploy funcione! Se não estiverem, ative-as.
 
@@ -54,7 +54,7 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
 
    Pesquise por **Artifact Registry** na barra de pesquisa superior. Ele é o repositório de imagens Docker da própria Google. É onde nossas imagens ficarão salvas após o **build**.
 
-    ![Página inicial do Google Cloud](/assets/artifact_registry_repository.png)
+    ![Repositório do Artifact Registry](/assets/artifact_registry_repository.png)
 
    Crie um repositório para imagens Docker com as seguintes configurações:
 
