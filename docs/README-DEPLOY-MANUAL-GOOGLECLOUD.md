@@ -58,8 +58,6 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
 
    Crie um repositório para imagens Docker com as seguintes configurações:
 
-    -	**Name:** alura-imersao-devops
-
     -	**Format:** Docker
 
     -	**Mode:** Pattern
@@ -89,14 +87,14 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
    O comando `gcloud run deploy` vai fazer tudo para a gente: identificar o seu Dockerfile, construir a imagem, enviá-la para o Artifact Registry e criar um serviço no Cloud Run.
 
     ```sh
-    gcloud run deploy alura-imersao-devops --source . --image southamerica-east1-docker.pkg.dev/<seu-id-do-projeto>/<nome-do-repositorio-docker>/<nome-da-imagem> --region southamerica-east1 --allow-unauthenticated --port 8000
+    gcloud run deploy <nome-do-servico> --source . --image southamerica-east1-docker.pkg.dev/<seu-id-do-projeto>/<nome-do-repositorio-docker>/<nome-da-imagem> --region southamerica-east1 --allow-unauthenticated --port 8000
     ```
    
   Vamos entender o que cada parte faz:
 
   - `gcloud run deploy`: Este é o comando principal que você usa para implantar um serviço no Cloud Run.
 
-  - `alura-imersao-devops`: Este é o nome que estamos dando ao novo serviço no Cloud Run. É o nome que vai aparecer no console e que será usado na URL.
+  - `<nome-do-servico>`: Este é o nome que estamos dando ao novo serviço no Cloud Run. É o nome que vai aparecer no console e que será usado na URL.
 
   - `--source .`: Essa flag diz ao Cloud Run para criar a imagem de contêiner usando o código-fonte que está no diretório atual. Ele vai procurar por um Dockerfile e construir a imagem a partir dele.
 
@@ -116,7 +114,7 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
 
    O Google Cloud Run vai gerar uma URL para a aplicação. No seu terminal, você vai ver algo parecido com isto:
 
-   https://alura-imersao-devops-827405736636.southamerica-east1.run.app/docs
+   https://api-827405736636.southamerica-east1.run.app/docs
 
    Agora a aplicação está na nuvem e disponível para todo mundo!
 
