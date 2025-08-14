@@ -24,7 +24,7 @@ Iremos aplicar o fluxo ilustrado abaixo:
 
 - **Git Actions (Observando o Repositório):** A seta pontilhada entre o GitHub e o Git Actions indica que o Git Actions está observando o repositório. Isso significa que ele está configurado para detectar automaticamente novas alterações (commits, pull requests etc.) no repositório. Quando uma alteração específica ocorre, como um novo commit na branch principal, o Git Actions é acionado.
 
-- **Pipeline (Início da Execução)**: Uma vez acionado, o Git Actions inicia o pipeline que é composto por seis passos principais, que serão executados em sequência:
+- **Pipeline (Início da Execução)**: Uma vez acionado, o Git Actions inicia o pipeline que é composto por seis passos principais, que serão executados em sequência.
   
   - **Checkout Source Code:** A primeira etapa do pipeline é buscar o código-fonte mais recente do repositório no GitHub. Isso garante que o pipeline esteja trabalhando com a versão mais atual do projeto.
 
@@ -40,17 +40,15 @@ Iremos aplicar o fluxo ilustrado abaixo:
 
 ## Configurando o Ambiente e o Pipeline
 
-1. **Utilize o mesmo projeto e repositório criado anteriormente no Google Cloud:**
+1. **Utilize o mesmo Projeto e Repositório Criado Anteriormente no Google Cloud:**
    
-2. **Crie e prepare o repositório no GitHub:**
+2. **Crie e Prepare o repositório no GitHub:**
 
-   Crie um repositório no GitHub. Em seguida, clone o repositório do projeto atual para sua máquina local e copie todos os arquivos para a pasta do novo repositório que você acabou de criar. Antes de enviar as      alterações para o GitHub, **exclua a pasta .github.** Isso é fundamental para que você possa aprender a criar o pipeline do zero no próximo passo. Após a exclusão, envie todas as alterações para o seu novo       repositório no GitHub.
+   Crie um repositório no GitHub. Em seguida, clone o repositório do projeto atual para sua máquina local e copie todos os arquivos para a pasta do novo repositório que você acabou de criar. Antes de enviar as alterações para o GitHub, **exclua a pasta .github.** Isso é fundamental para que você possa aprender a criar o pipeline do zero no próximo passo. Após a exclusão, envie todas as alterações para o seu novo repositório no GitHub.
 
 3. **Configure o Workflow:**
 
    No menu superior do seu repositório no GitHub, clique em **Actions**.
-
-   ![Actions](/assets/actions.png)
 
    Você verá alguns templates prontos que podem ser reutilizados. Como o processo envolve a construção de uma imagem Docker, vamos usar o template sugerido pelo GitHub Actions para este tipo de tarefa.
 
@@ -70,7 +68,7 @@ Iremos aplicar o fluxo ilustrado abaixo:
          branches: [ "main" ]
      ```
    
-   - Não é recomendado armazenar dados sensíveis, como credenciais, diretamente no código-fonte. Para isso, o GitHub Actions utiliza o conceito de secrets.
+   - Não é recomendado armazenar dados sensíveis, como credenciais, diretamente no código-fonte. Para isso, o GitHub Actions utiliza o     conceito de secrets.
 
      A linha `environment: gcp-prod` indica que o pipeline será executado em um ambiente de produção chamado gcp-prod. O uso de environments permite gerenciar segredos e permissões de forma mais organizada e          segura.
 
@@ -78,7 +76,7 @@ Iremos aplicar o fluxo ilustrado abaixo:
 
     ![Deploy Failure](/assets/deploy_failure.png)
 
-4. **Configurando o Ambiente:**
+4. **Configure o Ambiente de Produção:**
 
    No menu superior do GitHub, procure por **Settings > Environments** e crie um ambiente.
 
@@ -86,11 +84,9 @@ Iremos aplicar o fluxo ilustrado abaixo:
 
    ![Adicionando Environment](/assets/add_environment.png)
 
-   Dentro do ambiente recém-criado, crie um secret para configurar o projeto do Google Cloud.
-
-   ![Adicionando Secrets](/assets/add_secrets.png)
-
-   Nomeie o secret com o mesmo nome que está no arquivo YML do pipeline. No campo value, insira o ID do seu projeto do Google Cloud, que pode ser encontrado no seletor de projetos no console do Google Cloud.       Salve as alterações.
+   Dentro do ambiente recém-criado, crie um secret para configurar o projeto do Google Cloud. 
+   
+   Nomeie o secret com o mesmo nome que está no arquivo YML do pipeline. No campo value, insira o ID do seu projeto, que pode ser encontrado no seletor de projetos no console do Google Cloud. Salve as alterações.
 
    ![Secret Project ID](/assets/secret_project_id.png)
 
@@ -112,7 +108,7 @@ Iremos aplicar o fluxo ilustrado abaixo:
 
    ![Secret Credentials](/assets/secret_credentials.png)
 
-   No final, seus secrets devem estar configurados. Por questões de segurança, o GitHub não exibe o valor dos secrets após a criação, então, se precisar alterá-lo, você terá que inserir o valor novamente.
+   No final, seus secrets estarão configurados. Por questões de segurança, o GitHub não exibe o valor dos secrets após a criação, então, se precisar alterá-lo, você terá que inserir o valor novamente.
 
    ![Secrets](/assets/secrets.png)
 
@@ -136,29 +132,33 @@ Iremos aplicar o fluxo ilustrado abaixo:
 
     O **Artifact Registry** é o sucessor do **Container Registry** no Google Cloud e o serviço mais novo para gerenciamento de artefatos. Embora o Container Registry ainda funcione, o Google recomenda a             migração para o Artifact Registry.
 
-    A principal vantagem é que ele oferece um controle de permissões muito mais detalhado e seguro. Enquanto o Container Registry exigia acessos amplos, o Artifact Registry permite que você conceda permissões       mínimas e específicas para cada repositório, tornando a gestão mais simples e segura.
+    A principal vantagem é que ele oferece um controle de permissões muito mais detalhado e seguro. Enquanto o Container Registry exigia acessos amplos, o Artifact Registry permite que você conceda permissões mínimas e específicas para cada repositório, tornando a gestão mais simples e segura.
 
 6. **Realize o Deploy**
 
-   Execute o deploy novamente, acesse a aba **Actions**, selecione a última ação que falhou e clique em **Re-run all jobs**. Desta vez, o deploy será executado com sucesso!
+   Acesse a aba **Actions**, selecione a última ação que falhou e clique em **Re-run all jobs**. Desta vez, o deploy será executado com sucesso!
 
    ![Successful Deploy](/assets/successful_deploy.png)
 
    Após o deploy, verifique a imagem no seu repositório Artifact Registry. O nome definido para a imagem é API.
 
-   ![Repositório de Images](/assets/imagem_repository.png)
+   ![Repositório de Imagens](/assets/image_repository.png)
 
    Clique em API e confira as versões da imagem.
 
+   ![Versões da Imagem](/assets/api_images.png)
+
+7. **Acesse o Projeto**
+
    Acesse o serviço pelo Cloud Run e clique na URL gerada.
 
-   ![Serbiços](/assets/services.png)
+   ![Serviços](/assets/services.png)
 
    ![URL da API](/assets/api_url.png)
 
    https://api-827405736636.southamerica-east1.run.app/docs
 
-   Pronto, a aplicação está acessível a todos!
+   Agora a aplicação está disponível para todo mundo e implantada na nuvem de maneira mais rápida e eficaz!
 
 
 

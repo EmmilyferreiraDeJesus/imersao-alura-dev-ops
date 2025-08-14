@@ -8,7 +8,7 @@ A aplicação agora está empacotada e pronta para rodar em qualquer ambiente, m
 
 Vamos aplicar uma das práticas importantes do **[DevOps](https://www.alura.com.br/artigos/o-que-e-devops)**: o CD (Continuous Deployment), ou "Deploy Contínuo". Isso significa que, a cada atualização que fizermos na nossa branch principal, essa mudança será refletida no ambiente de produção.
 
-**Atenção:** Embora o deploy seja continuo, o CI (Continuous Integration),  que envolve testes e validações de código, não será aplicada neste projeto. A mesclagem de código na branch principal não passará por testes automatizados antes de ser integrada.
+**Atenção:** Embora o deploy seja continuo, o CI (Continuous Integration), que envolve testes e validações de código, não será aplicada neste projeto. A mesclagem de código na branch principal não passará por testes automatizados antes de ser integrada.
 
 Tudo isso será feito através de um **processo manual** que simula um pipeline de deploy para a aplicação.
 
@@ -22,7 +22,7 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
 
    O **[Google Cloud CLI](https://cloud.google.com/sdk/docs/install?hl=pt-br#supported_python_versions)** é um conjunto de ferramentas para gerenciar os recursos do Google Cloud a partir da linha de comando do      seu terminal.
 
-2. **Crie sua conta no Google Cloud**
+2. **Crie sua Conta no Google Cloud**
 
    O **[Google Cloud](https://cloud.google.com/free?utm_source=PMAX&utm_medium=display&utm_campaign=FY25_H1&utm_content=latampaidmedia_br_smb_dr_rda_gcp_pmax_FY25_H1_cloudstyle-patterns-artboard1_luac0021001_1710136&utm_term=-&gad_source=1&gad_campaignid=22113798131&gclid=CjwKCAjwkbzEBhAVEiwA4V-yqq390KVvyKo8eH-A3ylnkzixQNLBtRn7PXgOEFSljwJQgiXOHAEjaBoCxnwQAvD_BwE&gclsrc=aw.ds&hl=pt_br)** oferece créditos gratuitos para novos usuários por um tempo.
 
@@ -70,7 +70,7 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
 
 ## Execute os seguintes comandos gcloud no terminal
 
-1. **Autentique-se e Configure o   Projeto**
+1. **Autentique-se e Configure o Projeto**
 
    ```sh
     # Autenticar com a sua conta Google
@@ -90,27 +90,27 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
     gcloud run deploy <nome-do-servico> --source . --image southamerica-east1-docker.pkg.dev/<seu-id-do-projeto>/<nome-do-repositorio-docker>/<nome-da-imagem> --region southamerica-east1 --allow-unauthenticated --port 8000
     ```
    
-  Vamos entender o que cada parte faz:
+   Vamos entender o que cada parte faz:
 
-  - `gcloud run deploy`: Este é o comando principal que você usa para implantar um serviço no Cloud Run.
+   - `gcloud run deploy`: Este é o comando principal que você usa para implantar um serviço no Cloud Run.
 
-  - `<nome-do-servico>`: Este é o nome que estamos dando ao novo serviço no Cloud Run. É o nome que vai aparecer no console e que será usado na URL.
+   - `<nome-do-servico>`: Este é o nome que estamos dando ao novo serviço no Cloud Run. É o nome que vai aparecer no console e que será usado na URL.
 
-  - `--source .`: Essa flag diz ao Cloud Run para criar a imagem de contêiner usando o código-fonte que está no diretório atual. Ele vai procurar por um Dockerfile e construir a imagem a partir dele.
+   - `--source .`: Essa flag diz ao Cloud Run para criar a imagem de contêiner usando o código-fonte que está no diretório atual. Ele vai procurar por um Dockerfile e construir a imagem a partir dele.
 
-  - `--image southamerica-east1-docker.pkg.dev/<seu-id-do-projeto>/<nome-do-repositorio-docker>/<nome-da-imagem>`: Essa flag  faz um trabalho duplo:
+   - `--image southamerica-east1-docker.pkg.dev/<seu-id-do-projeto>/<nome-do-repositorio-docker>/<nome-da-imagem>`: Essa flag  faz um trabalho duplo:
     
      - Primeiro, ela instrui o Google Cloud a **construir** a imagem do seu container e, em seguida, a **salvá-la** no repositório de imagens especificado por você (o Artifact Registry).
 
      - Depois de salva, a mesma *flag* informa ao Cloud Run onde a imagem está para que ele possa **buscá-la e executar** a aplicação.
 
-  - `--region southamerica-east1`: Especifica que o serviço estará na região de São Paulo.
+   - `--region southamerica-east1`: Especifica que o serviço estará na região de São Paulo.
 
-  - `--allow-unauthenticated`: Permite que qualquer pessoa acesse a URL, sem precisar de login.
+   - `--allow-unauthenticated`: Permite que qualquer pessoa acesse a URL, sem precisar de login.
 
-  - `--port 8000`: Informa a porta que nosso container vai expor.
+   - `--port 8000`: Informa a porta que nosso container vai expor.
 
-3. **Acesse o projeto**
+3. **Acesse o Projeto**
 
    O Google Cloud Run vai gerar uma URL para a aplicação. No seu terminal, você vai ver algo parecido com isto:
 

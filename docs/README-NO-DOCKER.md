@@ -1,6 +1,6 @@
 # Execução local sem Docker
 
-1. **Crie um ambiente virtual:**
+1. **Crie um Ambiente Virtual:**
 
 ```sh
    # Linux/Mac
@@ -12,7 +12,7 @@
 
    ```
 
-2. **Ative o ambiente virtual:**
+2. **Ative o Ambiente Virtual:**
 
 ```sh
    # Linux/Mac
@@ -51,19 +51,19 @@ Isso acontece porque o PowerShell está com a execução de scripts desabilitada
 
 ##
 
-3. **Instale as dependências:**
+3. **Instale as Dependências:**
 
    ```sh
    pip install -r requirements.txt
    ```
 
-4. **Execute a aplicação:**
+4. **Execute a Aplicação:**
 
    ```sh
    uvicorn app:app --reload
    ```
 
-5. **Acesse a aplicação com a documentação interativa:**
+5. **Acesse a Aplicação com a Documentação Interativa:**
 
    Abra o navegador e acesse: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 

@@ -15,7 +15,7 @@ Vamos usar o **[Docker](https://www.alura.com.br/artigos/comecando-com-docker?sr
     # por exemplo
     docker ps .
     ```
-2. **Construa a imagem do Contêiner:**
+2. **Construa a Imagem do Contêiner:**
 
    Use o Dockerfile que está neste repositório para construir a imagem.
 
