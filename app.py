@@ -14,7 +14,7 @@ app = FastAPI(
         
         Permite realizar diferentes operações em cada uma dessas entidades.
 
-        Ela é hospedada e disponibilizada pelo Google Cloud Platform!
+        Não é só na minha máquina que funciona! 😉
     """, 
     version="1.0.0",
 )
