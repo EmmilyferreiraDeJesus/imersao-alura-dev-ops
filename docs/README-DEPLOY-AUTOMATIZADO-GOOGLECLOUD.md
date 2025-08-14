@@ -112,7 +112,7 @@ Iremos aplicar o fluxo ilustrado abaixo:
 
    ![Secrets](/assets/secrets.png)
 
-5. **Dê permissões à sua conta de serviço:**
+5. **Dê Permissões à sua Conta de Serviço:**
 
    Se tentarmos realizar o deploy novamente, a tentativa falhará devido a um erro de permissão. Isso acontece porque precisamos conceder à conta de serviço as permissões necessárias para: ser usada, enviar a       imagem para o repositório e implantar a imagem no serviço do Cloud Run.
 
