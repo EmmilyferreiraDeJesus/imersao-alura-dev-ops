@@ -32,7 +32,7 @@ Isso acontece porque o PowerShell está com a execução de scripts desabilitada
 
 ### ✅ Solução
 
-- **Abra o PowerShell como Administrador**
+- Abra o PowerShell como Administrador
 - Verifique a política de execução:
 
    ```sh
