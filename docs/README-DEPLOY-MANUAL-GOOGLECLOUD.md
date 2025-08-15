@@ -2,7 +2,7 @@
 
 A aplicação agora está empacotada e pronta para rodar em qualquer ambiente, mas como disponibilizar isso para todo mundo poder acessar?
 
-É para isso que vamos usar o **Google Cloud**, mais especificamente o Google Cloud Run que hospedará a aplicação. O **[Cloud Run](https://cloud.google.com/run/docs/overview/what-is-cloud-run?hl=pt-br)** é um serviço gerenciado pela Google. A melhor parte? Você só precisa subir uma imagem do seu container, e ele cuida do resto. Ele escala automaticamente para dar conta dos picos de tráfego e reduz a escala quando não há demanda, o que é ótimo para economizar recursos.
+É para isso que vamos usar o **Google Cloud**, mais especificamente o Google Cloud Run que hospedará a aplicação. O **[Cloud Run](https://cloud.google.com/run/docs/overview/what-is-cloud-run?hl=pt-br)** é um serviço gerenciado pelo Google. A melhor parte? Você só precisa subir uma imagem do seu container, e ele cuida do resto. Ele escala automaticamente para dar conta dos picos de tráfego e reduz a escala quando não há demanda, o que é ótimo para economizar recursos.
 
 ### Entendendo CI e CD
 
@@ -39,7 +39,7 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
 
 4. **Ative as APIS Cloud Run e Artifact Registry**
 
-   No menu lateral, procure por **API e Serviços > Biblioteca**. É aqui que vamos encontrar todas as APIs da Google.
+   No menu lateral, procure por **APIs and services > Library**. É aqui que vamos encontrar todas as APIs do Google.
 
    ![Biblioteca Google Cloud](/assets/library_google.png)
 
@@ -52,7 +52,7 @@ Aprender o processo de deploy manualmente é fundamental para o sucesso da autom
 
 5. **Crie um Repositório de Images**
 
-   Pesquise por **Artifact Registry** na barra de pesquisa superior. Ele é o repositório de imagens Docker da própria Google. É onde nossas imagens ficarão salvas após o **build**.
+   Pesquise por **Artifact Registry** na barra de pesquisa superior. Ele é o repositório de imagens Docker do próprio Google. É onde nossas imagens ficarão salvas após o **build**.
 
     ![Repositório do Artifact Registry](/assets/artifact_registry_repository.png)
 
