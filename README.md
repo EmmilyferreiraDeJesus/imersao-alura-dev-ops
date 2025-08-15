@@ -16,7 +16,8 @@ O objetivo principal é explorar o uso do Docker para construir e executar aplic
 - **SQLite**
 - **Docker**
 - **Google Cloud**
-  - Google Cloud Run
+  - Cloud Run
+  - Artifact Registry
   - SDK gcloud CLI
 
 ---
