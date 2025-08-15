@@ -42,7 +42,7 @@ Iremos aplicar o fluxo ilustrado abaixo:
 
 1. **Utilize o mesmo Projeto e Repositório Criado Anteriormente no Google Cloud:**
    
-2. **Crie e Prepare o repositório no GitHub:**
+2. **Crie e Prepare o Repositório no GitHub:**
 
    Crie um repositório no GitHub. Em seguida, clone o repositório do projeto atual para sua máquina local e copie todos os arquivos para a pasta do novo repositório que você acabou de criar. Antes de enviar as alterações para o GitHub, **exclua a pasta .github.** Isso é fundamental para que você possa aprender a criar o pipeline do zero no próximo passo. Após a exclusão, envie todas as alterações para o seu novo repositório no GitHub.
 
