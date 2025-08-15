@@ -1,6 +1,6 @@
 # Execução Local com Docker
 
-Vamos usar o **[Docker](https://www.alura.com.br/artigos/comecando-com-docker?srsltid=AfmBOorVIPa1fr58GKb_bnSJjPM6xNu78YNvXmS4T-GbavXH2YhCJXKK)** para que a aplicação possa rodar em qualquer máquina. A grande vantagem do Docker é que ele permite **empacotar nossa aplicação em uma imagem**. Pense na imagem como uma uma **receita completa** que já inclui tudo o que a aplicação precisa para funcionar – mesmo que você não tenha essas dependências instaladas diretamente na sua máquina! A imagem cuida de configurar o ambiente dentro do contêiner, garantindo que o aplicativo rode sem problemas. Essa imagem pode ser enviada para um **repositório compartilhado** (como o Docker Hub). Assim, qualquer pessoa que precise usar a aplicação só precisará **baixar essa imagem** e ter o projeto clonado em sua máquina para rodar, simplificando muito a distribuição e o uso!
+Vamos usar o **[Docker](https://www.alura.com.br/artigos/comecando-com-docker?srsltid=AfmBOorVIPa1fr58GKb_bnSJjPM6xNu78YNvXmS4T-GbavXH2YhCJXKK)** para que a aplicação possa rodar em qualquer máquina. A grande vantagem do Docker é que ele permite **empacotar nossa aplicação em uma imagem**. Pense na imagem como uma uma **receita completa** que já inclui tudo o que a aplicação precisa para funcionar – mesmo que você não tenha essas dependências instaladas diretamente na sua máquina! A imagem cuida de configurar o ambiente dentro do contêiner, garantindo que a aplicação rode sem problemas. Essa imagem pode ser enviada para um **repositório compartilhado** (como o Docker Hub). Assim, qualquer pessoa que precise usar a aplicação só precisará **baixar essa imagem** e ter o projeto clonado em sua máquina para rodar, simplificando muito a distribuição e o uso!
 
 1. **Inicie o Docker Engine:**
 
@@ -35,7 +35,7 @@ Vamos usar o **[Docker](https://www.alura.com.br/artigos/comecando-com-docker?sr
 
 3. **Execute o Contêiner:**
 
-   Para que a aplicação rode e você possa acessá-la, precisamos "conectar" a porta de dentro do contêiner à uma porta do seu computador. Pense no contêiner como      uma "caixa" isolada. Sua aplicação está na       porta 8000 dentro dessa caixa.
+   Para que a aplicação rode e você possa acessá-la, precisamos "conectar" a porta de dentro do contêiner à uma porta do seu computador. Pense no contêiner como uma "caixa" isolada. Sua aplicação está na            porta 8000 dentro dessa caixa.
 
    O comando `-p 8000:8000` faz essa "ponte":
 
